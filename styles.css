@@ -1,0 +1,20 @@
+/* Tenth Church Stylesheet - Design System & Tokens */
+:root {
+  /* Color Tokens — Warm Terracotta + Cream */
+  --color-forest: #3B1B14;       /* primary dark background (Deep Terracotta) */
+  --color-forest-dark: #2A120D;  /* deep accent */
+  --color-cream: #F7F3E9;        /* light section background (Warm Cream) */
+  --color-cream-light: #FAF6EE;  /* surface accent */
+  --color-sage: #D9B496;         /* eyebrow labels on dark bg (Warm Sand) */
+  --color-teal-btn: #C85A32;     /* primary CTA fill (Warm Rust) */
+  --color-teal-hover: #AC4924;   /* primary CTA hover */
+  --color-rust: #E08238;         /* active nav underline accent (Warm Amber) */
+  --color-white: #FFFFFF;
+  --color-text-dark: #261611;    /* body text on cream */
+  --color-text-light: #F3EDE2;   /* body text on dark (~90% opacity) */
+  --color-border-dark: rgba(38, 22, 17, 0.12);
+  --color-border-light: rgba(243, 237, 226, 0.18);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
