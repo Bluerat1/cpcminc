@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Christian Partnership for the Confined Ministry Inc, — Ministry in Action Complete Photo Gallery.">
+  <title>Ministry in Action Gallery — Christian Partnership for the Confined Ministry Inc</title>
+  
+  <!-- Typography Tokens via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & TOKENS (Matching Main Page Palette)
+       ========================================================================== */
+    :root {
+      --color-forest: #3B1B14;       /* Primary dark warm brown */
+      --color-forest-dark: #2A120D;  /* Deep accent brown */
+      --color-cream: #F7F3E9;        /* Warm cream background */
+      --color-cream-light: #FAF6EE;  /* Surface accent */
+      --color-sage: #D9B496;         /* Warm sand accent */
+      --color-teal-btn: #C85A32;     /* Warm rust primary CTA */
+      --color-teal-hover: #AC4924;   /* Warm rust hover */
+      --color-rust: #E08238;         /* Accent underline */
+      --color-white: #FFFFFF;
+      --color-text-dark: #261611;    /* Body text on cream */
+      --color-text-light: #F3EDE2;   /* Body text on dark */
+      --color-border-dark: rgba(38, 22, 17, 0.12);
+      --color-border-light: rgba(243, 237, 226, 0.18);
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --container-width: 1200px;
+      --gutter-mobile: 24px;
+      --gutter-desktop: 80px;
+      --section-pad-desktop: 140px;
+      --section-pad-mobile: 72px;
+
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-subtle: 0 10px 30px rgba(59, 27, 20, 0.08);
+      --shadow-hover: 0 20px 40px rgba(59, 27, 20, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      height: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-cream);
+      color: var(--color-text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding-left: var(--gutter-mobile);
+      padding-right: var(--gutter-mobile);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: var(--gutter-desktop);
+        padding-right: var(--gutter-desktop);
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+      border: none;
+    }
+
+    .btn-teal-pill {
+      background-color: var(--color-teal-btn);
+      color: var(--color-white);
+    }
+
+    .btn-teal-pill:hover {
+      background-color: var(--color-teal-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Site Header */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 24px 0;
+      background: transparent;
+      transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease;
+    }
+
+    .site-header.scrolled {
+      position: fixed;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(27, 58, 47, 0.08);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: var(--gutter-mobile);
+      padding-right: var(--gutter-mobile);
+    }
+
+    @media (min-width: 992px) {
+      .header-container {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: #1b3a2f; /* Dark forest green */
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      z-index: 1002;
+      line-height: 1;
+    }
+
+    .cross-icon {
+      width: 18px;
+      height: 22px;
+      fill: #1b3a2f;
+      flex-shrink: 0;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .main-nav {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      color: #1b3a2f; /* Inactive link color: Deep forest green */
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: #9E532B; /* Warm terracotta on hover */
+    }
+
+    .nav-link.active {
+      color: #9E532B; /* Active link warm terracotta/brown text color */
+      font-weight: 700;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background-color: #9E532B; /* Small centered dot indicator beneath active text */
+      border-radius: 50%;
+    }
+
+    .search-trigger-btn {
+      background: none;
+      color: #1b3a2f;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+      margin-left: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .search-trigger-btn:hover {
+      color: #9E532B;
+      transform: scale(1.1);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    @media (min-width: 992px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu-toggle span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-forest);
+      border-radius: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .site-header.scrolled .mobile-menu-toggle span {
+      background-color: var(--color-white);
+    }
+
+    .mobile-menu-toggle.open span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.open span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: var(--color-forest);
+      z-index: 1001;
+      padding: 120px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .mobile-nav-link {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--color-white);
+      display: block;
+    }
+
+    .mobile-nav-link.active {
+      color: var(--color-sage);
+      position: relative;
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Search Modal Overlay */
+    .search-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(42, 18, 13, 0.96);
+      backdrop-filter: blur(16px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .search-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .search-modal-content {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .search-modal-close {
+      position: absolute;
+      top: -60px;
+      right: 0;
+      background: none;
+      color: var(--color-white);
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    .search-big-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid var(--color-sage);
+      font-family: var(--font-serif);
+      font-size: 32px;
+      color: var(--color-white);
+      padding: 16px 0;
+    }
+
+    .search-big-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Hero Section */
+    .gallery-hero {
+      padding-top: 160px;
+      padding-bottom: 50px;
+      background-color: var(--color-cream-light);
+      text-align: center;
+      border-bottom: 1px solid var(--color-border-dark);
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-teal-btn);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 52px);
+      color: var(--color-forest-dark);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+      color: var(--color-text-dark);
+      opacity: 0.85;
+      font-style: italic;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid var(--color-border-dark);
+      color: var(--color-text-dark);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--color-forest);
+      color: var(--color-white);
+      border-color: var(--color-forest);
+    }
+
+    /* Masonry Gallery Grid */
+    .gallery-section {
+      padding: var(--section-pad-desktop) 0;
+    }
+
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 20px;
+    }
+
+    @media (min-width: 576px) {
+      .masonry-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .masonry-grid {
+        column-count: 3;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .masonry-grid {
+        column-count: 4;
+      }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-subtle);
+      background-color: var(--color-forest-dark);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+      opacity: 0.88;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(42, 18, 13, 0.92) 0%, rgba(42, 18, 13, 0) 100%);
+      color: var(--color-white);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .caption-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-sage);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .caption-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(42, 18, 13, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 24px;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      max-width: 900px;
+      max-height: 88vh;
+      position: relative;
+      text-align: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 78vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+    .lightbox-caption-text {
+      color: var(--color-cream);
+      margin-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 18px;
+    }
+
+    /* ==========================================================================
+       FOOTER (Refactored Layout with Site Palette)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-forest-dark);
+      color: var(--color-text-light);
+      padding-top: 50px;
+      padding-bottom: 30px;
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+
+    .footer-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      align-items: start;
+    }
+
+    @media (min-width: 840px) {
+      .footer-grid-2col {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      color: var(--color-white);
+      text-transform: uppercase;
+    }
+
+    .social-icons-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .social-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon-circle:hover {
+      background-color: var(--color-teal-btn);
+      border-color: var(--color-teal-btn);
+      color: var(--color-white);
+      transform: translateY(-2px);
+    }
+
+    .footer-contact-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--color-text-light);
+      opacity: 0.88;
+      line-height: 1.5;
+    }
+
+    .footer-contact-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .footer-contact-details a {
+      color: var(--color-white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-newsletter-box h3 {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--color-white);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-newsletter-box p {
+      font-size: 13px;
+      color: var(--color-text-light);
+      opacity: 0.8;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    .newsletter-form-inline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .newsletter-input-dark {
+      flex: 1;
+      max-width: 260px;
+      background-color: rgba(255, 255, 255, 0.12);
+      border: none;
+      border-radius: 4px;
+      padding: 12px 16px;
+      color: var(--color-white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .newsletter-input-dark::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .newsletter-input-dark:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-emerald-pill {
+      background-color: var(--color-teal-btn);
+      color: var(--color-white);
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .btn-emerald-pill:hover {
+      background-color: var(--color-teal-hover);
+      transform: translateY(-1px);
+    }
+
+    .footer-helper-link {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--color-white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.85;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-helper-link:hover {
+      opacity: 1;
+      color: var(--color-sage);
+    }
+
+    .footer-bottom-bar {
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 12px;
+      color: var(--color-text-light);
+      opacity: 0.75;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom-bar {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    .footer-bottom-bar a {
+      color: var(--color-text-light);
+      transition: var(--transition-smooth);
+    }
+
+    .footer-bottom-bar a:hover {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="main-header">
+    <div class="container header-container">
+
+      <!-- Brand / Logo -->
+      <a href="index.html#welcome" class="brand-logo" aria-label="Christian Partnership for the Confined Ministry Inc Homepage">
+        <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true">
+          <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
+        </svg>
+        <span>CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC,</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#welcome" class="nav-link">Welcome</a></li>
+          <li><a href="index.html#worship" class="nav-link">Ministries</a></li>
+          <li><a href="index.html#locations" class="nav-link">Locations</a></li>
+          <li><a href="index.html#transformation" class="nav-link">Events</a></li>
+          <li><a href="index.html#justice" class="nav-link">Give</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li>
+            <button class="search-trigger-btn" id="search-open-btn" aria-label="Open Search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html#welcome" class="mobile-nav-link">Welcome</a></li>
+      <li><a href="index.html#worship" class="mobile-nav-link">Ministries</a></li>
+      <li><a href="index.html#locations" class="mobile-nav-link">Locations</a></li>
+      <li><a href="index.html#transformation" class="mobile-nav-link">Events</a></li>
+      <li><a href="index.html#justice" class="mobile-nav-link">Give</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link active">Gallery</a></li>
+    </ul>
+    <div style="margin-top: auto;">
+      <a href="index.html#locations" class="btn btn-teal-pill" style="width: 100%;">Contact Us</a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="eyebrow">COMPLETE PHOTO GALLERY</span>
+      <h1 class="hero-title">Our Ministry in Action</h1>
+      <p class="hero-subtitle">"Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven." — Matthew 5:16</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterGallery('all')">All Moments (38)</button>
+        <button class="filter-btn" onclick="filterGallery('worship')">Worship & Prayer</button>
+        <button class="filter-btn" onclick="filterGallery('outreach')">Community Outreach</button>
+        <button class="filter-btn" onclick="filterGallery('events')">Thanksgiving & Events</button>
+        <button class="filter-btn" onclick="filterGallery('youth')">Youth & Fellowship</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Masonry Gallery Section (Contains ALL 21 Images) -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="masonry-grid" id="gallery-grid">
+
+        <!-- 1. .jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/\'.jfif', 'Community Ministry & Care Program')">
+          <img src="images/'.jfif" alt="Community Ministry & Care Program" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Community Ministry & Care</div>
+          </div>
+        </div>
+
+        <!-- 2. 04049e8e-2781-45a4-b405-ed1c49c8228a.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif', 'Main Congregation Worship')">
+          <img src="images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif" alt="Main Congregation Worship" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Main Congregation Worship</div>
+          </div>
+        </div>
+
+        <!-- 3. 08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif', 'Communion & Altar Reflection')">
+          <img src="images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif" alt="Communion & Altar Reflection" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Communion & Altar Reflection</div>
+          </div>
+        </div>
+
+        <!-- 4. 0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif', 'Congregational Worship Service')">
+          <img src="images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif" alt="Congregational Worship Service" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Sunday Morning Praise</div>
+          </div>
+        </div>
+
+        <!-- 5. 48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif', 'Youth Leadership Fellowship')">
+          <img src="images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif" alt="Youth Leadership Fellowship" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Youth Leadership Fellowship</div>
+          </div>
+        </div>
+
+        <!-- 6. 588e509f-d9ae-4d91-82ce-46c5da46464c (1).jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/588e509f-d9ae-4d91-82ce-46c5da46464c (1).jfif', 'Small Group Discipleship Session')">
+          <img src="images/588e509f-d9ae-4d91-82ce-46c5da46464c (1).jfif" alt="Small Group Discipleship Session" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Small Group Discipleship</div>
+          </div>
+        </div>
+
+        <!-- 7. 588e509f-d9ae-4d91-82ce-46c5da46464c.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/588e509f-d9ae-4d91-82ce-46c5da46464c.jfif', 'Ministry Event Gathering')">
+          <img src="images/588e509f-d9ae-4d91-82ce-46c5da46464c.jfif" alt="Ministry Event Gathering" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Ministry Event Gathering</div>
+          </div>
+        </div>
+
+        <!-- 8. 63ec8a36-4f36-4144-a654-1a6d167fb2c2.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/63ec8a36-4f36-4144-a654-1a6d167fb2c2.jfif', 'Annual Thanksgiving Celebration')">
+          <img src="images/63ec8a36-4f36-4144-a654-1a6d167fb2c2.jfif" alt="Annual Thanksgiving Celebration" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Annual Thanksgiving Party</div>
+          </div>
+        </div>
+
+        <!-- 9. 680fa8af-c802-4322-9f04-9d6233847f49.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/680fa8af-c802-4322-9f04-9d6233847f49.jfif', 'Shared Community Table & Meal')">
+          <img src="images/680fa8af-c802-4322-9f04-9d6233847f49.jfif" alt="Shared Community Table & Meal" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Shared Community Meal</div>
+          </div>
+        </div>
+
+        <!-- 10. 791af3e1-f908-4545-84da-49698ac3ec84.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/791af3e1-f908-4545-84da-49698ac3ec84.jfif', 'Prayer & Encouragement Ministry')">
+          <img src="images/791af3e1-f908-4545-84da-49698ac3ec84.jfif" alt="Prayer & Encouragement Ministry" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Prayer & Encouragement Notes</div>
+          </div>
+        </div>
+
+        <!-- 11. 809c2114-9328-4f92-b24e-7929de5f0009.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/809c2114-9328-4f92-b24e-7929de5f0009.jfif', 'Feeding & Care Community Outreach')">
+          <img src="images/809c2114-9328-4f92-b24e-7929de5f0009.jfif" alt="Feeding & Care Community Outreach" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Feeding & Care Outreach</div>
+          </div>
+        </div>
+
+        <!-- 12. 934343e0-2a54-4eeb-af28-47076a4bcf51.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/934343e0-2a54-4eeb-af28-47076a4bcf51.jfif', 'Holistic Transformation Outreach')">
+          <img src="images/934343e0-2a54-4eeb-af28-47076a4bcf51.jfif" alt="Holistic Transformation Outreach" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Holistic Transformation Service</div>
+          </div>
+        </div>
+
+        <!-- 13. 996fbf23-7139-430c-9ccc-42a837127abb.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/996fbf23-7139-430c-9ccc-42a837127abb.jfif', 'Fellowship & Spiritual Growth')">
+          <img src="images/996fbf23-7139-430c-9ccc-42a837127abb.jfif" alt="Fellowship & Spiritual Growth" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Spiritual Growth Session</div>
+          </div>
+        </div>
+
+        <!-- 14. 9de29878-a93f-44d3-904a-c3f8abaace25.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/9de29878-a93f-44d3-904a-c3f8abaace25.jfif', 'Church Gathering & Celebrations')">
+          <img src="images/9de29878-a93f-44d3-904a-c3f8abaace25.jfif" alt="Church Gathering & Celebrations" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Church Gathering & Celebration</div>
+          </div>
+        </div>
+
+        <!-- 15. a59aa531-5310-4836-a802-e38729451f2f.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/a59aa531-5310-4836-a802-e38729451f2f.jfif', 'Youth Circle & Prayer')">
+          <img src="images/a59aa531-5310-4836-a802-e38729451f2f.jfif" alt="Youth Circle & Prayer" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Youth Circle & Prayer</div>
+          </div>
+        </div>
+
+        <!-- 16. c8a4073f-01f4-4b1e-a01c-f04b41514e88.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/c8a4073f-01f4-4b1e-a01c-f04b41514e88.jfif', 'Prison Ministry Outreach Program')">
+          <img src="images/c8a4073f-01f4-4b1e-a01c-f04b41514e88.jfif" alt="Prison Ministry Outreach Program" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Prison Ministry Outreach</div>
+          </div>
+        </div>
+
+        <!-- 17. d5ac5716-8cdf-40ed-8d09-015c1adbbe33.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/d5ac5716-8cdf-40ed-8d09-015c1adbbe33.jfif', 'Ministry Anniversary & Banquet')">
+          <img src="images/d5ac5716-8cdf-40ed-8d09-015c1adbbe33.jfif" alt="Ministry Anniversary & Banquet" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Ministry Anniversary Banquet</div>
+          </div>
+        </div>
+
+        <!-- 18. d9f03f01-332c-4429-a6e6-a2a5db9ebf7b.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/d9f03f01-332c-4429-a6e6-a2a5db9ebf7b.jfif', 'Special Prayer & Intercession')">
+          <img src="images/d9f03f01-332c-4429-a6e6-a2a5db9ebf7b.jfif" alt="Special Prayer & Intercession" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Special Prayer & Intercession</div>
+          </div>
+        </div>
+
+        <!-- 19. ddc016ef-231b-491d-90f8-ebc35927281d.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/ddc016ef-231b-491d-90f8-ebc35927281d.jfif', 'Confined Ministry Leaders Seminar')">
+          <img src="images/ddc016ef-231b-491d-90f8-ebc35927281d.jfif" alt="Confined Ministry Leaders Seminar" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Leaders Training Seminar</div>
+          </div>
+        </div>
+
+        <!-- 20. e696ec00-fc2f-4208-a9ae-6451bf52292e.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/e696ec00-fc2f-4208-a9ae-6451bf52292e.jfif', 'Evangelistic Outreach Ministry')">
+          <img src="images/e696ec00-fc2f-4208-a9ae-6451bf52292e.jfif" alt="Evangelistic Outreach Ministry" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Evangelistic Community Outreach</div>
+          </div>
+        </div>
+
+        <!-- 21. f7e69608-cb47-4116-8c92-844ff081f88c.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/f7e69608-cb47-4116-8c92-844ff081f88c.jfif', 'Communal Celebration Moment')">
+          <img src="images/f7e69608-cb47-4116-8c92-844ff081f88c.jfif" alt="Communal Celebration Moment" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Communal Celebration Moment</div>
+          </div>
+        </div>
+
+        <!-- 22. 2afcbdd3-897b-499c-9e86-d160d7d3b327.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/2afcbdd3-897b-499c-9e86-d160d7d3b327.jfif', 'Prayer & Devotional Fellowship')">
+          <img src="images/2afcbdd3-897b-499c-9e86-d160d7d3b327.jfif" alt="Prayer & Devotional Fellowship" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Prayer & Devotional Fellowship</div>
+          </div>
+        </div>
+
+        <!-- 23. 38635d14-470a-4266-90fa-eb6ea870ca77.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/38635d14-470a-4266-90fa-eb6ea870ca77.jfif', 'Ministry Relief & Support')">
+          <img src="images/38635d14-470a-4266-90fa-eb6ea870ca77.jfif" alt="Ministry Relief & Support" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Ministry Relief & Support</div>
+          </div>
+        </div>
+
+        <!-- 24. 3dd81ed4-9f08-46b3-b510-fa6c1648f86b.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/3dd81ed4-9f08-46b3-b510-fa6c1648f86b.jfif', 'Annual Gathering & Praise')">
+          <img src="images/3dd81ed4-9f08-46b3-b510-fa6c1648f86b.jfif" alt="Annual Gathering & Praise" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Annual Gathering & Praise</div>
+          </div>
+        </div>
+
+        <!-- 25. 3f5d301f-55d4-4b19-a060-3874837d20c3.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/3f5d301f-55d4-4b19-a060-3874837d20c3.jfif', 'Youth Bible Discussion')">
+          <img src="images/3f5d301f-55d4-4b19-a060-3874837d20c3.jfif" alt="Youth Bible Discussion" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Youth Bible Discussion</div>
+          </div>
+        </div>
+
+        <!-- 26. 48c1d3e1-da69-4264-a896-ebf544ed3214.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/48c1d3e1-da69-4264-a896-ebf544ed3214.jfif', 'Altar Ministry & Worship')">
+          <img src="images/48c1d3e1-da69-4264-a896-ebf544ed3214.jfif" alt="Altar Ministry & Worship" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Altar Ministry & Worship</div>
+          </div>
+        </div>
+
+        <!-- 27. 53db417a-e01a-474d-b720-0b0f7a08f629.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/53db417a-e01a-474d-b720-0b0f7a08f629.jfif', 'Community Outreach Mission')">
+          <img src="images/53db417a-e01a-474d-b720-0b0f7a08f629.jfif" alt="Community Outreach Mission" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Community Outreach Mission</div>
+          </div>
+        </div>
+
+        <!-- 28. 62f8e9db-f6b0-4905-933a-833745259b85.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/62f8e9db-f6b0-4905-933a-833745259b85.jfif', 'Church Fellowship Banquet')">
+          <img src="images/62f8e9db-f6b0-4905-933a-833745259b85.jfif" alt="Church Fellowship Banquet" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Church Fellowship Banquet</div>
+          </div>
+        </div>
+
+        <!-- 29. 6eabc3f1-f83f-4cc5-a096-97449b685648.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/6eabc3f1-f83f-4cc5-a096-97449b685648.jfif', 'Spiritual Retreat & Prayer')">
+          <img src="images/6eabc3f1-f83f-4cc5-a096-97449b685648.jfif" alt="Spiritual Retreat & Prayer" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Spiritual Retreat & Prayer</div>
+          </div>
+        </div>
+
+        <!-- 30. 726df675-0c53-41fd-abb6-7f27d6552527.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/726df675-0c53-41fd-abb6-7f27d6552527.jfif', 'Youth Mentorship Meeting')">
+          <img src="images/726df675-0c53-41fd-abb6-7f27d6552527.jfif" alt="Youth Mentorship Meeting" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Youth Mentorship Meeting</div>
+          </div>
+        </div>
+
+        <!-- 31. 7c02db0c-36d7-4550-b888-d66afc7834b3.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/7c02db0c-36d7-4550-b888-d66afc7834b3.jfif', 'Encouragement & Visitation')">
+          <img src="images/7c02db0c-36d7-4550-b888-d66afc7834b3.jfif" alt="Encouragement & Visitation" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Encouragement & Visitation</div>
+          </div>
+        </div>
+
+        <!-- 32. 8164782e-2112-472b-aca0-97130e54c362.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/8164782e-2112-472b-aca0-97130e54c362.jfif', 'Special Ministry Conference')">
+          <img src="images/8164782e-2112-472b-aca0-97130e54c362.jfif" alt="Special Ministry Conference" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Special Ministry Conference</div>
+          </div>
+        </div>
+
+        <!-- 33. 9accfc42-57fb-4bdc-86ff-d1f3d000aca5.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/9accfc42-57fb-4bdc-86ff-d1f3d000aca5.jfif', 'Sunday Morning Service')">
+          <img src="images/9accfc42-57fb-4bdc-86ff-d1f3d000aca5.jfif" alt="Sunday Morning Service" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Sunday Morning Service</div>
+          </div>
+        </div>
+
+        <!-- 34. b32244f0-61c8-46f0-ba82-040d3d7b3499.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/b32244f0-61c8-46f0-ba82-040d3d7b3499.jfif', 'Community Care Program')">
+          <img src="images/b32244f0-61c8-46f0-ba82-040d3d7b3499.jfif" alt="Community Care Program" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Community Care Program</div>
+          </div>
+        </div>
+
+        <!-- 35. cd67776d-5bc0-4f85-be03-f7b908094e72.jfif -->
+        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/cd67776d-5bc0-4f85-be03-f7b908094e72.jfif', 'Youth Leadership Gathering')">
+          <img src="images/cd67776d-5bc0-4f85-be03-f7b908094e72.jfif" alt="Youth Leadership Gathering" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Youth & Fellowship</span>
+            <div class="caption-title">Youth Leadership Gathering</div>
+          </div>
+        </div>
+
+        <!-- 36. dbb1b3dd-fe39-4bbd-8b9c-6a32eafa3ba8.jfif -->
+        <div class="gallery-item" data-category="events" onclick="openLightbox('images/dbb1b3dd-fe39-4bbd-8b9c-6a32eafa3ba8.jfif', 'Thanksgiving Worship Gathering')">
+          <img src="images/dbb1b3dd-fe39-4bbd-8b9c-6a32eafa3ba8.jfif" alt="Thanksgiving Worship Gathering" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Thanksgiving & Events</span>
+            <div class="caption-title">Thanksgiving Worship Gathering</div>
+          </div>
+        </div>
+
+        <!-- 37. ef58ee18-c0f0-4381-9965-530dee74f5dc.jfif -->
+        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/ef58ee18-c0f0-4381-9965-530dee74f5dc.jfif', 'Outreach Mission Gathering')">
+          <img src="images/ef58ee18-c0f0-4381-9965-530dee74f5dc.jfif" alt="Outreach Mission Gathering" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Community Outreach</span>
+            <div class="caption-title">Outreach Mission Gathering</div>
+          </div>
+        </div>
+
+        <!-- 38. f7d868db-3d71-4d3a-bd48-e41a339b18ba.jfif -->
+        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/f7d868db-3d71-4d3a-bd48-e41a339b18ba.jfif', 'Worship Prayer Session')">
+          <img src="images/f7d868db-3d71-4d3a-bd48-e41a339b18ba.jfif" alt="Worship Prayer Session" class="gallery-img">
+          <div class="gallery-caption">
+            <span class="caption-tag">Worship & Prayer</span>
+            <div class="caption-title">Worship Prayer Session</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img src="" id="lightbox-img" alt="Enlarged photo" class="lightbox-img">
+      <div class="lightbox-caption-text" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Matching Footer (Tenth Church Style 2-Column Split) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-2col">
+
+        <!-- Left Column: Logo, Social Icons, Contact & Info -->
+        <div class="footer-left-col">
+          <div class="footer-brand">
+            <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true" style="width: 18px; height: 22px;">
+              <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
+            </svg>
+            <span>CHRISTIAN PARTNERSHIP FOR THE GOSPEL'S MINISTRY INC.</span>
+          </div>
+
+          <!-- Social Media Icons (Circular Outlines) -->
+          <div class="social-icons-row" aria-label="Social Media Links">
+            <a href="https://facebook.com/cpcmInc" class="social-icon-circle" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com/cpcmInc" class="social-icon-circle" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com/cpcmInc" class="social-icon-circle" aria-label="YouTube" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Contact Details -->
+          <ul class="footer-contact-details">
+            <li>📍 San Lucas Street, Cogon Highway, Cagayan de Oro City, Philippines, 9000</li>
+            <li>📞 0905 880 4825 &nbsp;|&nbsp; ✉️ charey2005@yahoo.com</li>
+            <li>💬 Messenger: <a href="https://m.me/cpcmInc" target="_blank" rel="noopener">m.me/cpcmInc</a></li>
+            <li style="margin-top: 6px;">
+              <a href="index.html#locations" class="footer-helper-link">Facility Rental / Inquiries</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Newsletter Signup Form -->
+        <div class="footer-newsletter-box">
+          <h3>Sign up for our Newsletter</h3>
+          <p>Subscribe to receive email updates with the latest news.</p>
+          <form class="newsletter-form-inline" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="EMAIL ADDRESS" class="newsletter-input-dark" required aria-label="Email Address">
+            <button type="submit" class="btn-emerald-pill">Subscribe</button>
+          </form>
+          <div>
+            <a href="index.html#locations" class="footer-helper-link">Report Misconduct</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          <span>© 2026 Christian Partnership for the Confined Ministry Inc.</span>
+        </div>
+        <div>
+          <span>Website powered by CPCM Inc</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal" aria-hidden="true">
+    <div class="search-modal-content">
+      <button class="search-modal-close" id="search-close-btn" aria-label="Close Search">&times;</button>
+      <input type="text" class="search-big-input" placeholder="Search CPCM Inc..." id="search-input">
+    </div>
+  </div>
+
+  <!-- Gallery JavaScript Filter, Lightbox & Header Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Sticky / Scrolled Header Class
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // 2. Mobile Menu Toggle & Drawer
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const drawerBackdrop = document.getElementById('drawer-backdrop');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleDrawer(open) {
+        const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
+        mobileDrawer.classList.toggle('open', isOpen);
+        drawerBackdrop.classList.toggle('open', isOpen);
+        mobileBtn.classList.toggle('open', isOpen);
+        mobileBtn.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => toggleDrawer());
+        drawerBackdrop.addEventListener('click', () => toggleDrawer(false));
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => toggleDrawer(false));
+        });
+      }
+
+      // 3. Search Modal Functionality
+      const searchOpenBtn = document.getElementById('search-open-btn');
+      const searchCloseBtn = document.getElementById('search-close-btn');
+      const searchModal = document.getElementById('search-modal');
+      const searchInput = document.getElementById('search-input');
+
+      function toggleSearch(open) {
+        if (!searchModal) return;
+        searchModal.classList.toggle('active', open);
+        searchModal.setAttribute('aria-hidden', !open);
+        if (open) {
+          setTimeout(() => searchInput.focus(), 100);
+        }
+      }
+
+      if (searchOpenBtn) {
+        searchOpenBtn.addEventListener('click', () => toggleSearch(true));
+        searchCloseBtn.addEventListener('click', () => toggleSearch(false));
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          toggleSearch(false);
+          toggleDrawer(false);
+        }
+      });
+    });
+
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(src, captionText) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+
+      img.src = src;
+      caption.innerText = captionText;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
