@@ -444,11 +444,19 @@
 
     .hero-subtitle {
       max-width: 680px;
-      margin: 0 auto 28px;
+      margin: 0 auto 12px;
       font-size: 17px;
       color: var(--color-text-dark);
       opacity: 0.85;
       font-style: italic;
+    }
+
+    .hero-intro-text {
+      max-width: 600px;
+      margin: 12px auto 0 auto;
+      color: var(--color-text-dark);
+      font-size: 0.98rem;
+      opacity: 0.9;
     }
 
     /* Filter Tabs */
@@ -739,6 +747,22 @@
       margin-bottom: 16px;
     }
 
+    .newsletter-feedback-msg {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #fce7f3;
+      background-color: rgba(255, 255, 255, 0.12);
+      border-left: 3px solid var(--color-sage);
+      padding: 10px 14px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .newsletter-feedback-msg.active {
+      display: block;
+    }
+
     .newsletter-input-dark {
       flex: 1;
       max-width: 260px;
@@ -850,9 +874,8 @@
         <ul class="nav-list">
           <li><a href="index.html#welcome" class="nav-link">Welcome</a></li>
           <li><a href="index.html#worship" class="nav-link">Ministries</a></li>
-          <li><a href="index.html#locations" class="nav-link">Locations</a></li>
-          <li><a href="index.html#transformation" class="nav-link">Events</a></li>
-          <li><a href="index.html#justice" class="nav-link">Give</a></li>
+          <li><a href="index.html#plan-your-visit" class="nav-link">Locations</a></li>
+          <li><a href="index.html#contact" class="nav-link">Give</a></li>
           <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
           <li>
             <button class="search-trigger-btn" id="search-open-btn" aria-label="Open Search">
@@ -881,26 +904,26 @@
     <ul class="mobile-nav-list">
       <li><a href="index.html#welcome" class="mobile-nav-link">Welcome</a></li>
       <li><a href="index.html#worship" class="mobile-nav-link">Ministries</a></li>
-      <li><a href="index.html#locations" class="mobile-nav-link">Locations</a></li>
-      <li><a href="index.html#transformation" class="mobile-nav-link">Events</a></li>
-      <li><a href="index.html#justice" class="mobile-nav-link">Give</a></li>
+      <li><a href="index.html#plan-your-visit" class="mobile-nav-link">Locations</a></li>
+      <li><a href="index.html#contact" class="mobile-nav-link">Give</a></li>
       <li><a href="gallery.html" class="mobile-nav-link active">Gallery</a></li>
     </ul>
     <div style="margin-top: auto;">
-      <a href="index.html#locations" class="btn btn-teal-pill" style="width: 100%;">Contact Us</a>
+      <a href="index.html#contact" class="btn btn-teal-pill" style="width: 100%;">Contact Us</a>
     </div>
   </aside>
 
   <!-- Hero Section -->
   <section class="gallery-hero">
     <div class="container">
-      <span class="eyebrow">COMPLETE PHOTO GALLERY</span>
+      <span class="eyebrow">CPCM COMMUNITY IN ACTION</span>
       <h1 class="hero-title">Our Ministry in Action</h1>
       <p class="hero-subtitle">"Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven." — Matthew 5:16</p>
+      <p class="hero-intro-text">Explore real moments of worship, fellowship, and community life at CPCM in Cagayan de Oro.</p>
 
       <!-- Category Filter Tabs -->
       <div class="filter-tabs">
-        <button class="filter-btn active" onclick="filterGallery('all')">All Moments (38)</button>
+        <button class="filter-btn active" onclick="filterGallery('all')">All Moments (21)</button>
         <button class="filter-btn" onclick="filterGallery('worship')">Worship & Prayer</button>
         <button class="filter-btn" onclick="filterGallery('outreach')">Community Outreach</button>
         <button class="filter-btn" onclick="filterGallery('events')">Thanksgiving & Events</button>
@@ -914,9 +937,9 @@
     <div class="container">
       <div class="masonry-grid" id="gallery-grid">
 
-        <!-- 1. .jfif -->
-        <div class="gallery-item" data-category="outreach" onclick="openLightbox('images/\'.jfif', 'Community Ministry & Care Program')">
-          <img src="images/'.jfif" alt="Community Ministry & Care Program" class="gallery-img">
+        <!-- 1. '.jfif -->
+        <div class="gallery-item" data-category="outreach" tabindex="0" role="button" aria-label="View photo: Community Ministry & Care Program" onclick="openLightbox('images/\'.jfif', 'Community Ministry & Care Program', this)" onkeydown="if(event.key==='Enter'||event.key===' ') { openLightbox('images/\'.jfif', 'Community Ministry & Care Program', this); event.preventDefault(); }">
+          <img src="images/&#39;.jfif" alt="Community Ministry & Care Program" class="gallery-img" loading="lazy" width="400" height="300">
           <div class="gallery-caption">
             <span class="caption-tag">Community Outreach</span>
             <div class="caption-title">Community Ministry & Care</div>
@@ -924,8 +947,8 @@
         </div>
 
         <!-- 2. 04049e8e-2781-45a4-b405-ed1c49c8228a.jfif -->
-        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif', 'Main Congregation Worship')">
-          <img src="images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif" alt="Main Congregation Worship" class="gallery-img">
+        <div class="gallery-item" data-category="worship" tabindex="0" role="button" aria-label="View photo: Main Congregation Worship" onclick="openLightbox('images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif', 'Main Congregation Worship', this)" onkeydown="if(event.key==='Enter'||event.key===' ') { openLightbox('images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif', 'Main Congregation Worship', this); event.preventDefault(); }">
+          <img src="images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif" alt="Main Congregation Worship" class="gallery-img" loading="lazy" width="400" height="300">
           <div class="gallery-caption">
             <span class="caption-tag">Worship & Prayer</span>
             <div class="caption-title">Main Congregation Worship</div>
@@ -933,8 +956,8 @@
         </div>
 
         <!-- 3. 08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif -->
-        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif', 'Communion & Altar Reflection')">
-          <img src="images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif" alt="Communion & Altar Reflection" class="gallery-img">
+        <div class="gallery-item" data-category="worship" tabindex="0" role="button" aria-label="View photo: Communion & Altar Reflection" onclick="openLightbox('images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif', 'Communion & Altar Reflection', this)" onkeydown="if(event.key==='Enter'||event.key===' ') { openLightbox('images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif', 'Communion & Altar Reflection', this); event.preventDefault(); }">
+          <img src="images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif" alt="Communion & Altar Reflection" class="gallery-img" loading="lazy" width="400" height="300">
           <div class="gallery-caption">
             <span class="caption-tag">Worship & Prayer</span>
             <div class="caption-title">Communion & Altar Reflection</div>
@@ -942,8 +965,8 @@
         </div>
 
         <!-- 4. 0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif -->
-        <div class="gallery-item" data-category="worship" onclick="openLightbox('images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif', 'Congregational Worship Service')">
-          <img src="images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif" alt="Congregational Worship Service" class="gallery-img">
+        <div class="gallery-item" data-category="worship" tabindex="0" role="button" aria-label="View photo: Congregational Worship Service" onclick="openLightbox('images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif', 'Congregational Worship Service', this)" onkeydown="if(event.key==='Enter'||event.key===' ') { openLightbox('images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif', 'Congregational Worship Service', this); event.preventDefault(); }">
+          <img src="images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif" alt="Congregational Worship Service" class="gallery-img" loading="lazy" width="400" height="300">
           <div class="gallery-caption">
             <span class="caption-tag">Worship & Prayer</span>
             <div class="caption-title">Sunday Morning Praise</div>
@@ -951,8 +974,8 @@
         </div>
 
         <!-- 5. 48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif -->
-        <div class="gallery-item" data-category="youth" onclick="openLightbox('images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif', 'Youth Leadership Fellowship')">
-          <img src="images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif" alt="Youth Leadership Fellowship" class="gallery-img">
+        <div class="gallery-item" data-category="youth" tabindex="0" role="button" aria-label="View photo: Youth Leadership Fellowship" onclick="openLightbox('images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif', 'Youth Leadership Fellowship', this)" onkeydown="if(event.key==='Enter'||event.key===' ') { openLightbox('images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif', 'Youth Leadership Fellowship', this); event.preventDefault(); }">
+          <img src="images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif" alt="Youth Leadership Fellowship" class="gallery-img" loading="lazy" width="400" height="300">
           <div class="gallery-caption">
             <span class="caption-tag">Youth & Fellowship</span>
             <div class="caption-title">Youth Leadership Fellowship</div>
@@ -1261,10 +1284,10 @@
   </section>
 
   <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" onclick="closeLightbox(event)">
     <div class="lightbox-content" onclick="event.stopPropagation()">
-      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-      <img src="" id="lightbox-img" alt="Enlarged photo" class="lightbox-img">
+      <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close photo view" onclick="closeLightbox()">&times;</button>
+      <img src="" id="lightbox-img" alt="Enlarged photo view" class="lightbox-img">
       <div class="lightbox-caption-text" id="lightbox-caption"></div>
     </div>
   </div>
@@ -1308,7 +1331,7 @@
             <li>📞 0905 880 4825 &nbsp;|&nbsp; ✉️ charey2005@yahoo.com</li>
             <li>💬 Messenger: <a href="https://m.me/cpcmInc" target="_blank" rel="noopener">m.me/cpcmInc</a></li>
             <li style="margin-top: 6px;">
-              <a href="index.html#locations" class="footer-helper-link">Facility Rental / Inquiries</a>
+              <a href="mailto:charey2005@yahoo.com?subject=Facility%20Rental%20Inquiry" class="footer-helper-link">Facility Rental / Inquiries</a>
             </li>
           </ul>
         </div>
@@ -1317,12 +1340,13 @@
         <div class="footer-newsletter-box">
           <h3>Sign up for our Newsletter</h3>
           <p>Subscribe to receive email updates with the latest news.</p>
-          <form class="newsletter-form-inline" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-            <input type="email" placeholder="EMAIL ADDRESS" class="newsletter-input-dark" required aria-label="Email Address">
+          <form class="newsletter-form-inline" id="gallery-newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" id="gallery-newsletter-email" placeholder="EMAIL ADDRESS" class="newsletter-input-dark" required aria-label="Email Address">
             <button type="submit" class="btn-emerald-pill">Subscribe</button>
           </form>
-          <div>
-            <a href="index.html#locations" class="footer-helper-link">Report Misconduct</a>
+          <div id="gallery-newsletter-feedback" class="newsletter-feedback-msg" role="status" aria-live="polite"></div>
+          <div style="margin-top: 12px;">
+            <a href="mailto:charey2005@yahoo.com?subject=Report%20Misconduct" class="footer-helper-link">Report Misconduct</a>
           </div>
         </div>
 
@@ -1429,25 +1453,74 @@
       });
     }
 
-    function openLightbox(src, captionText) {
+    let lastTriggerElement = null;
+
+    function openLightbox(src, captionText, triggerEl) {
+      lastTriggerElement = triggerEl || document.activeElement;
       const modal = document.getElementById('lightbox-modal');
       const img = document.getElementById('lightbox-img');
       const caption = document.getElementById('lightbox-caption');
+      const closeBtn = document.getElementById('lightbox-close-btn');
 
       img.src = src;
       caption.innerText = captionText;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+
+      if (closeBtn) {
+        setTimeout(() => closeBtn.focus(), 50);
+      }
     }
 
     function closeLightbox(e) {
       const modal = document.getElementById('lightbox-modal');
+      if (!modal.classList.contains('active')) return;
       modal.classList.remove('active');
       document.body.style.overflow = '';
+
+      if (lastTriggerElement && typeof lastTriggerElement.focus === 'function') {
+        lastTriggerElement.focus();
+      }
+    }
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('gallery-newsletter-feedback');
+      const input = document.getElementById('gallery-newsletter-email');
+      if (feedback) {
+        feedback.textContent = "Newsletter signup isn't available yet. Please contact CPCM if you'd like to receive updates.";
+        feedback.classList.add('active');
+      }
+      if (input) {
+        input.value = '';
+      }
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal || !modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'Tab') {
+        const focusables = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focusables || focusables.length === 0) return;
+
+        const firstEl = focusables[0];
+        const lastEl = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl || !modal.contains(document.activeElement)) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          if (document.activeElement === lastEl || !modal.contains(document.activeElement)) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
     });
   </script>
 </body>
