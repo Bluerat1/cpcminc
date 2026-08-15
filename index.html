@@ -299,9 +299,19 @@
       justify-content: space-between;
       padding-left: var(--gutter-mobile);
       padding-right: var(--gutter-mobile);
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     @media (min-width: 992px) {
+      .header-container {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+
+    @media (min-width: 1200px) {
       .header-container {
         padding-left: 48px;
         padding-right: 48px;
@@ -312,16 +322,27 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      font-size: 13px;
+      letter-spacing: 0.06em;
       color: #1b3a2f; /* Dark forest green */
       text-transform: uppercase;
       z-index: 1002;
       transition: color 0.3s ease;
       line-height: 1;
+      white-space: nowrap;
+      margin-right: 16px;
+    }
+
+    @media (min-width: 1200px) {
+      .brand-logo {
+        font-size: 14px;
+        gap: 12px;
+        letter-spacing: 0.08em;
+        margin-right: 24px;
+      }
     }
 
     .cross-icon {
@@ -348,7 +369,19 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 32px;
+      gap: 16px;
+    }
+
+    @media (min-width: 1200px) {
+      .nav-list {
+        gap: 24px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .nav-list {
+        gap: 32px;
+      }
     }
 
     .nav-link {
@@ -363,6 +396,7 @@
       padding: 8px 0;
       transition: color 0.3s ease;
       display: inline-block;
+      white-space: nowrap;
     }
 
     .nav-link:hover,
@@ -910,6 +944,190 @@
 
     .community-preview-cta-wrap {
       text-align: center;
+    }
+
+    /* ==========================================================================
+       6C. CONFINED MINISTRY SECTION
+       ========================================================================== */
+    .confined-ministry-section {
+      background-color: var(--color-forest);
+      color: var(--color-text-light);
+      padding: var(--section-pad-mobile) 0;
+      border-bottom: 1px solid rgba(243, 237, 226, 0.12);
+    }
+
+    @media (min-width: 768px) {
+      .confined-ministry-section {
+        padding: 100px 0;
+      }
+    }
+
+    .confined-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .confined-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .confined-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .confined-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .confined-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: rgba(200, 90, 50, 0.15);
+      border: 1px solid rgba(200, 90, 50, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-sage);
+      margin-bottom: 20px;
+    }
+
+    .confined-card-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-sage);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .confined-card h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--color-white);
+      margin-bottom: 12px;
+    }
+
+    .confined-card p {
+      font-size: 0.98rem;
+      color: var(--color-text-light);
+      opacity: 0.88;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       6D. OUR STORY & TIMELINE SECTION
+       ========================================================================== */
+    .our-story-section {
+      background-color: var(--color-cream-light);
+      color: var(--color-text-dark);
+      padding: var(--section-pad-mobile) 0;
+      border-bottom: 1px solid var(--color-border-dark);
+    }
+
+    @media (min-width: 768px) {
+      .our-story-section {
+        padding: 100px 0;
+      }
+    }
+
+    .mission-vision-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .mv-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border-dark);
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .mv-box h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--color-forest-dark);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mv-box p {
+      font-size: 1rem;
+      color: var(--color-text-dark);
+      line-height: 1.65;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Timeline component */
+    .timeline-container {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding-left: 28px;
+      border-left: 2px solid var(--color-sage);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -37px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--color-sage);
+      border: 3px solid var(--color-cream-light);
+      box-shadow: 0 0 0 1px var(--color-sage);
+    }
+
+    .timeline-year {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: var(--color-teal-btn);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .timeline-text {
+      font-size: 1.02rem;
+      color: var(--color-text-dark);
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* ==========================================================================
@@ -1462,7 +1680,8 @@
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="#welcome" class="nav-link active">Welcome</a></li>
-          <li><a href="#worship" class="nav-link">Ministries</a></li>
+          <li><a href="#confined-ministry" class="nav-link">Ministries</a></li>
+          <li><a href="#our-story" class="nav-link">Our Story</a></li>
           <li><a href="#plan-your-visit" class="nav-link">Locations</a></li>
           <li><a href="#contact" class="nav-link">Give</a></li>
           <li><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -1492,9 +1711,11 @@
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
       <li><a href="#welcome" class="mobile-nav-link active">Welcome</a></li>
-      <li><a href="#worship" class="mobile-nav-link">Ministries</a></li>
+      <li><a href="#confined-ministry" class="mobile-nav-link">Ministries</a></li>
+      <li><a href="#our-story" class="mobile-nav-link">Our Story</a></li>
       <li><a href="#plan-your-visit" class="mobile-nav-link">Locations</a></li>
       <li><a href="#contact" class="mobile-nav-link">Give</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
     </ul>
     <div style="margin-top: auto;">
       <a href="#contact" class="btn btn-teal-pill" style="width: 100%;">Contact Us</a>
@@ -1644,6 +1865,71 @@
 
 
   <!-- ==========================================================================
+       6C. CONFINED MINISTRY SECTION
+       ========================================================================== -->
+  <section class="confined-ministry-section" id="confined-ministry">
+    <div class="container">
+      <div class="community-preview-header">
+        <span class="eyebrow">OUR SPECIALIZED CALLING</span>
+        <h2>Confined Ministry</h2>
+        <p class="community-preview-lead">Bringing the hope of the Gospel beyond the church walls.</p>
+      </div>
+
+      <div class="confined-grid">
+        <!-- Block 1: Prison & Jail Ministry -->
+        <div class="confined-card">
+          <div class="confined-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 3h18v18H3z" />
+              <path d="M8 3v18M13 3v18M18 3v18" />
+            </svg>
+          </div>
+          <h3>Prison & Jail Ministry</h3>
+          <p>CPCM’s prison ministry began in 2002. Between 2006 and 2012, the ministry expanded across different jails in Region 10 and beyond, conducting ongoing outreach and discipleship inside correctional facilities.</p>
+        </div>
+
+        <!-- Block 2: Livelihood & Employment -->
+        <div class="confined-card">
+          <div class="confined-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </div>
+          <h3>Livelihood & Employment</h3>
+          <p>CPCM has provided livelihood training for prisoners inside jails. In 2012, CPCM partnered with several Christian employers to help ex-PDL (People Deprived of Liberty) members find meaningful employment.</p>
+        </div>
+
+        <!-- Block 3: Families & Children -->
+        <div class="confined-card">
+          <div class="confined-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Families & Children</h3>
+          <p>Established partly to address the vital needs of ex-PDLs and their loved ones, CPCM’s ministry includes AWANA training and supportive spiritual growth programs for the children of prisoners.</p>
+        </div>
+
+        <!-- Block 4: Community Care -->
+        <div class="confined-card">
+          <div class="confined-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3>Community Care</h3>
+          <p>CPCM’s holistic care programs have included medical missions, community development projects inside jails (such as water-filtration systems for clean drinking water), and annual Christmas drives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
        6B. HOMEPAGE COMMUNITY PHOTO PREVIEW SECTION
        ========================================================================== -->
   <section class="community-preview-section">
@@ -1683,6 +1969,89 @@
 
       <div class="community-preview-cta-wrap">
         <a href="gallery.html" class="btn btn-teal-pill">View Our Community</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       6D. OUR STORY & TIMELINE SECTION
+       ========================================================================== -->
+  <section class="our-story-section" id="our-story">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="eyebrow">OUR HERITAGE & VISION</span>
+        <h2>Our Story</h2>
+        <p class="section-lead-text">CPCM’s ministry grew from a calling to serve people affected by incarceration and bring the transforming power of the Gospel to communities.</p>
+      </div>
+
+      <!-- Mission & Vision Cards -->
+      <div class="mission-vision-grid">
+        <div class="mv-box">
+          <h3>Our Mission</h3>
+          <p>To train leaders and mobilize churches to bring holistic transformation to the lost, least and last people of society through the power of gospel.</p>
+        </div>
+        <div class="mv-box">
+          <h3>Our Vision</h3>
+          <p>To see marginalized people experience holistic transformation through the Power of the gospel and the concerted effort with strategic ministry partners.</p>
+        </div>
+      </div>
+
+      <!-- Historical Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">1998</div>
+          <p class="timeline-text">Rev. Charlemagne G. Delez was released from jail, marking the spiritual seed of what would become CPCM.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2002</div>
+          <p class="timeline-text">Pastor Charlou started prison ministry along with young people from his church, Fortress of Life.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2005</div>
+          <p class="timeline-text">Pastor Charlou recruited Christians from other churches to join in prison ministry. In November 2005, Pastor Charlou opened the first Christian Partnership for the Confined Ministry Inc. (CPCM) church, established to meet the needs of ex-PDLs and their loved ones.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2006 &ndash; 2012</div>
+          <p class="timeline-text">The ministry expanded across different jails in Region 10 and beyond.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2012</div>
+          <p class="timeline-text">CPCM partnered with several Christian employers to help CPCM ex-PDL members find employment.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2013</div>
+          <p class="timeline-text">A second church was planted through the initiative of an ex-PDL member.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2021</div>
+          <p class="timeline-text">A third church was planted at Mantibugao, Manolo Fortich, Bukidnon by a CPCM pastor who was also an ex-PDL. During this time, a generous ministry partner donated a church lot and provided allowance support for prison ministry workers.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2022</div>
+          <p class="timeline-text">A generous anonymous donor bought a church lot in Cagayan de Oro City for ex-PDLs and others.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2022</div>
+          <p class="timeline-text">Greenhills Christian Fellowship (GCF) and Union Church of Manila (UCM) played a key role in helping CPCM establish a Memorandum of Agreement (MOA) with the Bureau of Jail Management and Penology National Headquarters (BJMP NHQ) for national jail access.</p>
+        </div>
       </div>
     </div>
   </section>
