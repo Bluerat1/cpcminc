@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Christian Partnership for the Confined Ministry Inc. — Evangelical Church located in San Lucas Street, Cogon Highway, Cagayan de Oro, Philippines. Training leaders and mobilizing churches to bring holistic transformation to the lost, least and confined.">
-  <title>Christian Partnership for the Confined Ministry Inc. — Evangelical Church</title>
+    content="Our Story — History, mission, vision, and timeline of Christian Partnership for the Confined Ministry Inc. from 1998 to present in Cagayan de Oro City.">
+  <title>Our Story — Christian Partnership for the Confined Ministry Inc.</title>
 
   <!-- Typography Tokens via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,6 @@
        DESIGN SYSTEM & TOKENS
        ========================================================================== */
     :root {
-      /* Color Tokens — Warm Terracotta + Cream */
       --color-forest: #3B1B14;
       --color-forest-dark: #2A120D;
       --color-cream: #F7F3E9;
@@ -35,24 +34,20 @@
       --color-border-dark: rgba(38, 22, 17, 0.12);
       --color-border-light: rgba(243, 237, 226, 0.18);
 
-      /* Typography Tokens */
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-      /* Spacing Tokens */
       --container-width: 1200px;
       --gutter-mobile: 24px;
       --gutter-desktop: 80px;
       --section-pad-desktop: 140px;
       --section-pad-mobile: 72px;
 
-      /* Transitions & Shadows */
       --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       --shadow-subtle: 0 10px 30px rgba(59, 27, 20, 0.08);
       --shadow-hover: 0 20px 40px rgba(59, 27, 20, 0.15);
     }
 
-    /* Reset & Base Styles */
     *,
     *::before,
     *::after {
@@ -69,8 +64,8 @@
 
     body {
       font-family: var(--font-sans);
-      background-color: var(--color-forest);
-      color: var(--color-text-light);
+      background-color: var(--color-cream-light);
+      color: var(--color-text-dark);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -101,7 +96,6 @@
       outline: none;
     }
 
-    /* Container Utility */
     .container {
       width: 100%;
       max-width: var(--container-width);
@@ -117,27 +111,22 @@
       }
     }
 
-    /* Typography Components */
     .eyebrow {
       font-family: var(--font-sans);
       font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--color-sage);
+      color: var(--color-teal-btn);
       display: inline-block;
       margin-bottom: 16px;
-    }
-
-    .eyebrow-dark {
-      color: var(--color-teal-btn);
     }
 
     h1,
     .h1 {
       font-family: var(--font-serif);
-      font-size: clamp(38px, 5vw, 56px);
-      line-height: 1.15;
+      font-size: clamp(34px, 4.5vw, 52px);
+      line-height: 1.18;
       font-weight: 600;
       letter-spacing: -0.01em;
       margin-bottom: 24px;
@@ -146,7 +135,7 @@
     h2,
     .h2 {
       font-family: var(--font-serif);
-      font-size: clamp(30px, 4vw, 40px);
+      font-size: clamp(28px, 3.5vw, 40px);
       line-height: 1.2;
       font-weight: 600;
       letter-spacing: -0.01em;
@@ -156,21 +145,12 @@
     h3,
     .h3 {
       font-family: var(--font-serif);
-      font-size: clamp(22px, 3vw, 28px);
+      font-size: clamp(20px, 2.5vw, 24px);
       line-height: 1.3;
       font-weight: 600;
       margin-bottom: 12px;
     }
 
-    p.body-text {
-      font-family: var(--font-sans);
-      font-size: clamp(16px, 2vw, 18px);
-      line-height: 1.65;
-      margin-bottom: 32px;
-      opacity: 0.92;
-    }
-
-    /* Component: Pill Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -200,19 +180,6 @@
       box-shadow: 0 8px 20px rgba(200, 90, 50, 0.35);
     }
 
-    .btn-outline-pill {
-      border: 1.5px solid currentColor;
-      background-color: transparent;
-      color: var(--color-white);
-    }
-
-    .btn-outline-pill:hover,
-    .btn-outline-pill:focus-visible {
-      background-color: var(--color-white);
-      color: var(--color-forest);
-      transform: translateY(-2px);
-    }
-
     .btn-outline-dark {
       border: 1.5px solid var(--color-text-dark);
       background-color: transparent;
@@ -226,20 +193,12 @@
       transform: translateY(-2px);
     }
 
-    .btn:focus-visible,
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--color-sage);
-      outline-offset: 3px;
-    }
-
     .btn-group {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
     }
-
 
     /* HEADER & NAVIGATION */
     .site-header {
@@ -511,351 +470,161 @@
       pointer-events: auto;
     }
 
-
-    /* HERO SECTION */
-    .hero-section {
-      position: relative;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding-top: 210px;
-      padding-bottom: 120px;
-      overflow: hidden;
+    /* PAGE HERO */
+    .page-hero {
+      padding-top: 170px;
+      padding-bottom: 80px;
       background-color: var(--color-cream);
-    }
-
-    .hero-bg-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    .hero-bg-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: contrast(1.02);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(247, 243, 233, 0.92) 0%, rgba(247, 243, 233, 0.82) 60%, rgba(247, 243, 233, 0.75) 100%);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 760px;
       color: var(--color-text-dark);
       text-align: center;
+      border-bottom: 1px solid var(--color-border-dark);
+    }
+
+    .page-hero h1 {
+      color: var(--color-forest-dark);
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+
+    .page-hero p {
+      max-width: 680px;
       margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.88;
+      line-height: 1.65;
     }
 
-    .hero-eyebrow {
-      color: var(--color-forest-dark);
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
-      color: var(--color-forest-dark);
-      font-size: clamp(32px, 4.2vw, 48px);
-      line-height: 1.25;
-      margin-bottom: 24px;
-      font-weight: 600;
-    }
-
-
-    /* IDENTITY INTRO BANNER */
-    .identity-intro-section {
+    /* OUR STORY & TIMELINE */
+    .our-story-section {
       background-color: var(--color-cream-light);
       color: var(--color-text-dark);
-      padding: 80px 0;
-      border-bottom: 1px solid var(--color-border-dark);
-      text-align: center;
-    }
-
-    .identity-intro-content {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .identity-intro-content h2 {
-      color: var(--color-forest-dark);
-      margin-bottom: 16px;
-    }
-
-    .identity-intro-content p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-
-
-    /* FEATURE SECTIONS (GATHER, EQUIP, REACH) */
-    .feature-section {
-      background-color: var(--color-forest);
-      color: var(--color-text-light);
       padding: var(--section-pad-mobile) 0;
-      position: relative;
     }
 
     @media (min-width: 768px) {
-      .feature-section {
-        padding: var(--section-pad-desktop) 0;
-      }
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    @media (min-width: 768px) {
-      .feature-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 90px;
-      }
-
-      .feature-mirrored .feature-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .feature-mirrored .feature-text-block {
-        order: 1;
-      }
-
-      .feature-mirrored .feature-collage-block {
-        order: 2;
-      }
-    }
-
-    .collage-container {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      border-radius: 16px;
-    }
-
-    .collage-img {
-      border-radius: 16px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-      transition: transform 0.4s ease;
-      object-fit: cover;
-    }
-
-    .collage-container:hover .collage-img {
-      transform: translateY(-4px);
-    }
-
-    .collage-style-1 {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .collage-style-1 .img-primary {
-      width: 65%;
-      height: 280px;
-    }
-
-    .collage-style-1 .img-secondary {
-      width: 35%;
-      height: 220px;
-    }
-
-    .collage-style-2 {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .collage-style-2 .img-primary {
-      width: 60%;
-      height: 280px;
-    }
-
-    .collage-style-2 .img-secondary {
-      width: 40%;
-      height: 220px;
-    }
-
-    .pillar-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .pillar-icon-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: rgba(200, 90, 50, 0.15);
-      border: 1px solid rgba(200, 90, 50, 0.3);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-sage);
-      flex-shrink: 0;
-    }
-
-    .pillar-icon-badge svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--color-sage);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .feature-section-divider {
-      border-top: 1px solid rgba(243, 237, 226, 0.1);
-    }
-
-
-    /* COMMUNITY PHOTO PREVIEW SECTION */
-    .community-preview-section {
-      background-color: var(--color-forest-dark);
-      color: var(--color-text-light);
-      padding: var(--section-pad-mobile) 0;
-      border-top: 1px solid rgba(243, 237, 226, 0.12);
-      border-bottom: 1px solid rgba(243, 237, 226, 0.12);
-    }
-
-    @media (min-width: 768px) {
-      .community-preview-section {
+      .our-story-section {
         padding: 100px 0;
       }
     }
 
-    .community-preview-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 48px auto;
-    }
-
-    .community-preview-header h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(28px, 3.5vw, 42px);
-      color: var(--color-white);
-      margin-bottom: 16px;
-    }
-
-    .community-preview-lead {
-      font-size: 1.05rem;
-      color: var(--color-text-light);
-      opacity: 0.88;
-      line-height: 1.6;
-    }
-
-    .community-preview-grid {
+    .mission-vision-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 768px) {
+      .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .mv-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border-dark);
+      border-radius: 16px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .mv-box h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--color-forest-dark);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mv-box p {
+      font-size: 1.02rem;
+      color: var(--color-text-dark);
+      line-height: 1.65;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Timeline component */
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .timeline-header h2 {
+      color: var(--color-forest-dark);
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding-left: 28px;
+      border-left: 2px solid var(--color-sage);
+    }
+
+    .timeline-item {
+      position: relative;
       margin-bottom: 40px;
     }
 
-    @media (min-width: 600px) {
-      .community-preview-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .timeline-item:last-child {
+      margin-bottom: 0;
     }
 
-    @media (min-width: 992px) {
-      .community-preview-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-      }
-    }
-
-    .community-preview-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      box-shadow: var(--shadow-subtle);
-      transition: var(--transition-smooth);
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .community-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .community-preview-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .community-preview-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .community-preview-overlay {
+    .timeline-dot {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(42, 18, 13, 0.85) 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 16px;
+      left: -37px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--color-sage);
+      border: 3px solid var(--color-cream-light);
+      box-shadow: 0 0 0 1px var(--color-sage);
     }
 
-    .community-preview-tag {
-      font-size: 12px;
+    .timeline-year {
+      font-family: var(--font-sans);
       font-weight: 700;
+      font-size: 14px;
       letter-spacing: 0.08em;
+      color: var(--color-teal-btn);
+      margin-bottom: 6px;
       text-transform: uppercase;
-      color: var(--color-cream);
     }
 
-    .community-preview-cta-wrap {
-      text-align: center;
-    }
-
-
-    /* PLAN YOUR VISIT BANNER */
-    .visit-teaser-section {
-      background-color: var(--color-cream-light);
+    .timeline-text {
+      font-size: 1.02rem;
       color: var(--color-text-dark);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* BOTTOM CTA SECTION */
+    .story-cta-section {
+      background-color: var(--color-forest);
+      color: var(--color-text-light);
       padding: 80px 0;
       text-align: center;
     }
 
-    .visit-teaser-content {
+    .story-cta-container {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .visit-teaser-content h2 {
-      color: var(--color-forest-dark);
-      margin-bottom: 14px;
+    .story-cta-container h2 {
+      color: var(--color-white);
     }
 
-    .visit-teaser-content p {
+    .story-cta-container p {
       font-size: 1.05rem;
       opacity: 0.88;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
+      line-height: 1.6;
     }
-
 
     /* FOOTER */
     .site-footer {
@@ -1100,8 +869,6 @@
   <!-- HEADER & NAVIGATION -->
   <header class="site-header" id="main-header">
     <div class="container header-container">
-
-      <!-- Brand / Logo -->
       <a href="index.html" class="brand-logo" aria-label="Christian Partnership for the Confined Ministry Inc. Homepage">
         <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true">
           <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
@@ -1109,18 +876,16 @@
         <span>CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
       </a>
 
-      <!-- Desktop Navigation -->
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="index.html" class="nav-link active" aria-current="page">Welcome</a></li>
+          <li><a href="index.html" class="nav-link">Welcome</a></li>
           <li><a href="ministries.html" class="nav-link">Ministries</a></li>
-          <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+          <li><a href="our-story.html" class="nav-link active" aria-current="page">Our Story</a></li>
           <li><a href="locations.html" class="nav-link">Locations</a></li>
           <li><a href="gallery.html" class="nav-link">Gallery</a></li>
         </ul>
       </nav>
 
-      <!-- Mobile Hamburger Button -->
       <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -1129,13 +894,13 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
+  <!-- MOBILE DRAWER -->
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
     <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link active" aria-current="page">Welcome</a></li>
+      <li><a href="index.html" class="mobile-nav-link">Welcome</a></li>
       <li><a href="ministries.html" class="mobile-nav-link">Ministries</a></li>
-      <li><a href="our-story.html" class="mobile-nav-link">Our Story</a></li>
+      <li><a href="our-story.html" class="mobile-nav-link active" aria-current="page">Our Story</a></li>
       <li><a href="locations.html" class="mobile-nav-link">Locations</a></li>
       <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
     </ul>
@@ -1144,208 +909,114 @@
     </div>
   </aside>
 
-
-  <!-- HERO SECTION -->
-  <section class="hero-section" id="welcome">
-    <div class="hero-bg-wrapper">
-      <img src="images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif"
-        alt="Christian Partnership for the Confined Ministry Inc congregation gathered in worship" class="hero-bg-img">
-      <div class="hero-overlay"></div>
-    </div>
-
+  <!-- PAGE HERO -->
+  <section class="page-hero">
     <div class="container">
-      <div class="hero-content">
-        <span class="eyebrow hero-eyebrow">WELCOME TO CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
-        <h1 class="hero-title">An Evangelical Church in Cagayan de Oro City Equipping Leaders to Serve the Lost, Least, and Confined.</h1>
-        <p class="hero-description" style="max-width: 720px; margin: 0 auto 28px auto; font-size: 1.125rem; opacity: 0.9; line-height: 1.6;">We mobilize churches across our community to bring holistic transformation through the power of the gospel.</p>
-        <div class="btn-group" style="justify-content: center;">
-          <a href="locations.html" class="btn btn-teal-pill">Plan Your Visit</a>
-          <a href="our-story.html" class="btn btn-outline-pill">Our Story</a>
-        </div>
-      </div>
+      <span class="eyebrow">OUR HERITAGE & VISION</span>
+      <h1>Our Story</h1>
+      <p>CPCM’s ministry grew from a calling to serve people affected by incarceration and bring the transforming power of the Gospel to communities across Cagayan de Oro City and Region 10.</p>
     </div>
   </section>
 
+  <!-- MISSION, VISION & TIMELINE SECTION -->
+  <section class="our-story-section">
+    <div class="container">
 
-  <!-- SHORT CONFINED MINISTRY IDENTITY INTRO -->
-  <section class="identity-intro-section">
-    <div class="container identity-intro-content">
-      <span class="eyebrow eyebrow-dark">WHO WE ARE</span>
-      <h2>Born from Prison Ministry, Dedicated to Transforming Lives</h2>
-      <p>Christian Partnership for the Confined Ministry Inc. (CPCM) is an evangelical church birthed out of prison outreach in Cagayan de Oro City. We train Christian leaders, care for prisoners and their families, and equip believers to share God's love with the marginalized.</p>
+      <!-- Mission & Vision Cards -->
+      <div class="mission-vision-grid">
+        <div class="mv-box">
+          <h3>Our Mission</h3>
+          <p>To train leaders and mobilize churches to bring holistic transformation to the lost, least and last people of society through the power of gospel.</p>
+        </div>
+        <div class="mv-box">
+          <h3>Our Vision</h3>
+          <p>To see marginalized people experience holistic transformation through the Power of the gospel and the concerted effort with strategic ministry partners.</p>
+        </div>
+      </div>
+
+      <!-- Timeline Header -->
+      <div class="timeline-header">
+        <span class="eyebrow">FAITHFUL JOURNEY</span>
+        <h2>Ministry Historical Timeline</h2>
+      </div>
+
+      <!-- Historical Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">1998</div>
+          <p class="timeline-text">Rev. Charlemagne G. Delez was released from jail, marking the spiritual seed of what would become CPCM.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2002</div>
+          <p class="timeline-text">Pastor Charlou started prison ministry along with young people from his church, Fortress of Life.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2005</div>
+          <p class="timeline-text">Pastor Charlou recruited Christians from other churches to join in prison ministry. In November 2005, Pastor Charlou opened the first Christian Partnership for the Confined Ministry Inc. (CPCM) church, established to meet the needs of ex-PDLs and their loved ones.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2006 &ndash; 2012</div>
+          <p class="timeline-text">The ministry expanded across different jails in Region 10 and beyond.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2012</div>
+          <p class="timeline-text">CPCM partnered with several Christian employers to help CPCM ex-PDL members find employment.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2013</div>
+          <p class="timeline-text">A second church was planted through the initiative of an ex-PDL member.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2021</div>
+          <p class="timeline-text">A third church was planted at Mantibugao, Manolo Fortich, Bukidnon by a CPCM pastor who was also an ex-PDL. During this time, a generous ministry partner donated a church lot and provided allowance support for prison ministry workers.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2022</div>
+          <p class="timeline-text">A generous anonymous donor bought a church lot in Cagayan de Oro City for ex-PDLs and others.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-year">2022</div>
+          <p class="timeline-text">Greenhills Christian Fellowship (GCF) and Union Church of Manila (UCM) played a key role in helping CPCM establish a Memorandum of Agreement (MOA) with the Bureau of Jail Management and Penology National Headquarters (BJMP NHQ) for national jail access.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA SECTION -->
+  <section class="story-cta-section">
+    <div class="container story-cta-container">
+      <span class="eyebrow" style="color: var(--color-sage);">EXPLORE CPCM TODAY</span>
+      <h2>See Our Community in Action</h2>
+      <p>Discover real moments of worship, fellowship, and outreach across our ministry, or join us for a Sunday gathering.</p>
       <div class="btn-group" style="justify-content: center;">
-        <a href="our-story.html" class="btn btn-outline-dark">Read Our Story</a>
-        <a href="ministries.html" class="btn btn-teal-pill">Explore Our Ministries</a>
+        <a href="gallery.html" class="btn btn-teal-pill">View Photo Gallery</a>
+        <a href="locations.html" class="btn btn-outline-pill">Plan Your Visit</a>
       </div>
     </div>
   </section>
-
-
-  <!-- FEATURE SECTION 1 — GATHER -->
-  <section class="feature-section" id="worship">
-    <div class="container">
-      <div class="feature-grid">
-
-        <div class="feature-collage-block">
-          <div class="collage-container collage-style-1">
-            <img src="images/08946c86-fdfc-45ee-a84c-e0edcb708e23.jfif" alt="Communion elements on wooden table"
-              class="collage-img img-secondary" loading="lazy" width="400" height="300">
-            <img src="images/0aab174a-6def-4ff8-bf45-190cedb0be4d.jfif" alt="Congregation worship scene"
-              class="collage-img img-primary" loading="lazy" width="600" height="400">
-          </div>
-        </div>
-
-        <div class="feature-text-block">
-          <div class="pillar-badge">
-            <span class="pillar-icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </span>
-            <span class="eyebrow" style="margin-bottom: 0;">GATHER &bull; IN SPIRIT AND IN TRUTH</span>
-          </div>
-          <h2>A Community of Worship</h2>
-          <p class="body-text">We gather every Sunday in Cagayan de Oro for worship and prayer, creating welcoming spaces to encounter God together.</p>
-          <a href="locations.html" class="btn btn-outline-pill">Plan Your Visit</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FEATURE SECTION 2 — EQUIP -->
-  <section class="feature-section feature-mirrored feature-section-divider" id="transformation">
-    <div class="container">
-      <div class="feature-grid">
-
-        <div class="feature-text-block">
-          <div class="pillar-badge">
-            <span class="pillar-icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-            </span>
-            <span class="eyebrow" style="margin-bottom: 0;">EQUIP &bull; WITH GOD FOR OTHERS</span>
-          </div>
-          <h2>A Community of Transformation</h2>
-          <p class="body-text">We focus on equipping Christian leaders and building supportive spiritual growth so believers can mature in their faith and serve others.</p>
-          <a href="ministries.html" class="btn btn-outline-pill">Explore Our Ministries</a>
-        </div>
-
-        <div class="feature-collage-block">
-          <div class="collage-container collage-style-2">
-            <img src="images/588e509f-d9ae-4d91-82ce-46c5da46464c.jfif" alt="Small group event gathering"
-              class="collage-img img-primary" loading="lazy" width="600" height="400">
-            <img src="images/680fa8af-c802-4322-9f04-9d6233847f49.jfif" alt="Fellowship gathering at table"
-              class="collage-img img-secondary" loading="lazy" width="400" height="300">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FEATURE SECTION 3 — REACH -->
-  <section class="feature-section feature-section-divider" id="justice">
-    <div class="container">
-      <div class="feature-grid">
-
-        <div class="feature-collage-block">
-          <div class="collage-container collage-style-1">
-            <img src="images/791af3e1-f908-4545-84da-49698ac3ec84.jfif"
-              alt="Handwritten encouragement note next to coffee mug" class="collage-img img-secondary" loading="lazy" width="400" height="300">
-            <img src="images/809c2114-9328-4f92-b24e-7929de5f0009.jfif"
-              alt="Volunteer serving food at community kitchen" class="collage-img img-primary" loading="lazy" width="600" height="400">
-          </div>
-        </div>
-
-        <div class="feature-text-block">
-          <div class="pillar-badge">
-            <span class="pillar-icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v8M8 12h8" />
-              </svg>
-            </span>
-            <span class="eyebrow" style="margin-bottom: 0;">REACH &bull; RECONCILING ALL THINGS</span>
-          </div>
-          <h2>A Community of Justice</h2>
-          <p class="body-text">We reach beyond our church doors to share the gospel of Jesus Christ through outreach and discipleship in prisons and jails across our region.</p>
-          <a href="ministries.html#confined-ministry" class="btn btn-outline-pill">Explore Confined Ministry</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- COMMUNITY PHOTO PREVIEW SECTION -->
-  <section class="community-preview-section">
-    <div class="container">
-      <div class="community-preview-header">
-        <span class="eyebrow">LIFE AT CPCM</span>
-        <h2>CPCM Community in Action</h2>
-        <p class="community-preview-lead">Real moments of worship, fellowship, and outreach across our ministry in Cagayan de Oro.</p>
-      </div>
-
-      <div class="community-preview-grid">
-        <div class="community-preview-card">
-          <img src="images/04049e8e-2781-45a4-b405-ed1c49c8228a.jfif" alt="Main Congregation Worship" loading="lazy" width="400" height="300">
-          <div class="community-preview-overlay">
-            <span class="community-preview-tag">Worship & Prayer</span>
-          </div>
-        </div>
-        <div class="community-preview-card">
-          <img src="images/809c2114-9328-4f92-b24e-7929de5f0009.jfif" alt="Feeding & Care Community Outreach" loading="lazy" width="400" height="300">
-          <div class="community-preview-overlay">
-            <span class="community-preview-tag">Community Outreach</span>
-          </div>
-        </div>
-        <div class="community-preview-card">
-          <img src="images/63ec8a36-4f36-4144-a654-1a6d167fb2c2.jfif" alt="Annual Thanksgiving Party" loading="lazy" width="400" height="300">
-          <div class="community-preview-overlay">
-            <span class="community-preview-tag">Thanksgiving & Events</span>
-          </div>
-        </div>
-        <div class="community-preview-card">
-          <img src="images/48492d1f-f665-4e8c-8c70-81cc667b6ff1.jfif" alt="Youth Leadership Fellowship" loading="lazy" width="400" height="300">
-          <div class="community-preview-overlay">
-            <span class="community-preview-tag">Youth & Fellowship</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="community-preview-cta-wrap">
-        <a href="gallery.html" class="btn btn-teal-pill">View Full Gallery</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- VISIT TEASER BANNER -->
-  <section class="visit-teaser-section">
-    <div class="container visit-teaser-content">
-      <span class="eyebrow eyebrow-dark">JOIN US THIS SUNDAY</span>
-      <h2>You Are Welcome Here</h2>
-      <p>San Lucas Street, Cogon Highway, Cagayan de Oro City | Services at 9:00 AM & 5:00 PM</p>
-      <div class="btn-group" style="justify-content: center;">
-        <a href="locations.html" class="btn btn-teal-pill">View Service Times & Location</a>
-      </div>
-    </div>
-  </section>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid-2col">
-
-        <!-- Left Column -->
         <div class="footer-left-col">
           <div class="footer-brand">
             <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true" style="width: 18px; height: 22px;">
@@ -1379,20 +1050,17 @@
           </ul>
         </div>
 
-        <!-- Right Column -->
         <div class="footer-newsletter-box">
           <h3>Sign up for our Newsletter</h3>
           <p>Subscribe to receive email updates with the latest news.</p>
-          <form class="newsletter-form-inline" id="index-newsletter-form" onsubmit="handleSubscribe(event)">
-            <input type="email" id="index-newsletter-email" placeholder="EMAIL ADDRESS" class="newsletter-input-dark" required aria-label="Email Address">
+          <form class="newsletter-form-inline" id="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" id="newsletter-email" placeholder="EMAIL ADDRESS" class="newsletter-input-dark" required aria-label="Email Address">
             <button type="submit" class="btn-emerald-pill">Subscribe</button>
           </form>
-          <div id="index-newsletter-feedback" class="newsletter-feedback-msg" role="status" aria-live="polite"></div>
+          <div id="newsletter-feedback" class="newsletter-feedback-msg" role="status" aria-live="polite"></div>
         </div>
-
       </div>
 
-      <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>
           <span>© 2026 Christian Partnership for the Confined Ministry Inc.</span>
@@ -1401,15 +1069,12 @@
           <span>Website powered by CPCM Inc</span>
         </div>
       </div>
-
     </div>
   </footer>
 
-
-  <!-- MINIMAL JS -->
+  <!-- INTERACTIVE JS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Sticky Header Scroll Effect
       const header = document.getElementById('main-header');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
@@ -1419,7 +1084,6 @@
         }
       });
 
-      // 2. Mobile Drawer Navigation Toggle
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileDrawer = document.getElementById('mobile-drawer');
       const drawerBackdrop = document.getElementById('drawer-backdrop');
@@ -1436,10 +1100,7 @@
 
       mobileBtn.addEventListener('click', () => toggleDrawer());
       drawerBackdrop.addEventListener('click', () => toggleDrawer(false));
-
-      mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => toggleDrawer(false));
-      });
+      mobileNavLinks.forEach(link => link.addEventListener('click', () => toggleDrawer(false)));
 
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
@@ -1448,18 +1109,15 @@
       });
     });
 
-    // 4. Subscription Feedback Toast
     function handleSubscribe(e) {
       e.preventDefault();
-      const feedback = document.getElementById('index-newsletter-feedback');
-      const input = document.getElementById('index-newsletter-email');
+      const feedback = document.getElementById('newsletter-feedback');
+      const input = document.getElementById('newsletter-email');
       if (feedback) {
         feedback.textContent = "Newsletter signup isn't available yet. Please contact CPCM if you'd like to receive updates.";
         feedback.classList.add('active');
       }
-      if (input) {
-        input.value = '';
-      }
+      if (input) input.value = '';
     }
   </script>
 </body>
