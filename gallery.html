@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Christian Partnership for the Confined Ministry Inc, — Ministry in Action Complete Photo Gallery.">
-  <title>Ministry in Action Gallery — Christian Partnership for the Confined Ministry Inc</title>
+  <meta name="description" content="Christian Partnership for the Confined Ministry Inc. — Ministry in Action Complete Photo Gallery.">
+  <title>Ministry in Action Gallery — Christian Partnership for the Confined Ministry Inc.</title>
   
   <!-- Typography Tokens via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,6 +187,25 @@
       line-height: 1;
       white-space: nowrap;
       margin-right: 16px;
+    }
+
+    .brand-text-full {
+      display: none;
+    }
+
+    .brand-text-short {
+      display: inline;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+
+    @media (min-width: 768px) {
+      .brand-text-full {
+        display: inline;
+      }
+      .brand-text-short {
+        display: none;
+      }
     }
 
     @media (min-width: 1200px) {
@@ -896,11 +915,12 @@
     <div class="container header-container">
 
       <!-- Brand / Logo -->
-      <a href="index.html" class="brand-logo" aria-label="Christian Partnership for the Confined Ministry Inc Homepage">
+      <a href="index.html" class="brand-logo" aria-label="Christian Partnership for the Confined Ministry Inc. Homepage">
         <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true">
           <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
         </svg>
-        <span>CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC,</span>
+        <span class="brand-text-full">CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
+        <span class="brand-text-short">CPCM</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -911,15 +931,6 @@
           <li><a href="our-story.html" class="nav-link">Our Story</a></li>
           <li><a href="locations.html" class="nav-link">Locations</a></li>
           <li><a href="gallery.html" class="nav-link active" aria-current="page">Gallery</a></li>
-          <li>
-            <button class="search-trigger-btn" id="search-open-btn" aria-label="Open Search">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </button>
-          </li>
         </ul>
       </nav>
 
@@ -1337,7 +1348,7 @@
             <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true" style="width: 18px; height: 22px;">
               <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
             </svg>
-            <span>CHRISTIAN PARTNERSHIP FOR THE GOSPEL'S MINISTRY INC.</span>
+            <span>CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
           </div>
 
           <!-- Social Media Icons (Circular Outlines) -->
@@ -1399,14 +1410,6 @@
     </div>
   </footer>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal" aria-hidden="true">
-    <div class="search-modal-content">
-      <button class="search-modal-close" id="search-close-btn" aria-label="Close Search">&times;</button>
-      <input type="text" class="search-big-input" placeholder="Search CPCM Inc..." id="search-input">
-    </div>
-  </div>
-
   <!-- Gallery JavaScript Filter, Lightbox & Header Controller -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1443,29 +1446,8 @@
         });
       }
 
-      // 3. Search Modal Functionality
-      const searchOpenBtn = document.getElementById('search-open-btn');
-      const searchCloseBtn = document.getElementById('search-close-btn');
-      const searchModal = document.getElementById('search-modal');
-      const searchInput = document.getElementById('search-input');
-
-      function toggleSearch(open) {
-        if (!searchModal) return;
-        searchModal.classList.toggle('active', open);
-        searchModal.setAttribute('aria-hidden', !open);
-        if (open) {
-          setTimeout(() => searchInput.focus(), 100);
-        }
-      }
-
-      if (searchOpenBtn) {
-        searchOpenBtn.addEventListener('click', () => toggleSearch(true));
-        searchCloseBtn.addEventListener('click', () => toggleSearch(false));
-      }
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          toggleSearch(false);
           toggleDrawer(false);
         }
       });

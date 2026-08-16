@@ -308,6 +308,25 @@
       margin-right: 16px;
     }
 
+    .brand-text-full {
+      display: none;
+    }
+
+    .brand-text-short {
+      display: inline;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+
+    @media (min-width: 768px) {
+      .brand-text-full {
+        display: inline;
+      }
+      .brand-text-short {
+        display: none;
+      }
+    }
+
     @media (min-width: 1200px) {
       .brand-logo {
         font-size: 14px;
@@ -1106,7 +1125,8 @@
         <svg class="cross-icon" viewBox="0 0 24 32" aria-hidden="true">
           <path d="M9.5 0H14.5V8.5H24V13.5H14.5V32H9.5V13.5H0V8.5H9.5V0Z" />
         </svg>
-        <span>CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
+        <span class="brand-text-full">CHRISTIAN PARTNERSHIP FOR THE CONFINED MINISTRY INC.</span>
+        <span class="brand-text-short">CPCM</span>
       </a>
 
       <!-- Desktop Navigation -->
