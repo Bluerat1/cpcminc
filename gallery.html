@@ -337,8 +337,8 @@
       transition: var(--transition-smooth);
     }
 
-    .site-header.scrolled .mobile-menu-toggle span {
-      background-color: var(--color-white);
+    .mobile-menu-toggle.open span {
+      background-color: var(--color-white) !important;
     }
 
     .mobile-menu-toggle.open span:nth-child(1) {
@@ -362,13 +362,40 @@
       max-width: 380px;
       height: 100vh;
       background-color: var(--color-forest);
-      z-index: 1001;
-      padding: 120px 40px 60px;
+      z-index: 1010;
+      padding: 24px 28px 40px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+
+    .drawer-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-white);
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .drawer-close-btn:hover,
+    .drawer-close-btn:focus-visible {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: scale(1.08);
     }
 
     .mobile-drawer.open {
@@ -402,7 +429,7 @@
       height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(4px);
-      z-index: 1000;
+      z-index: 1009;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -935,7 +962,7 @@
       </nav>
 
       <!-- Mobile Hamburger Button -->
-      <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -946,6 +973,14 @@
   <!-- Mobile Drawer -->
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
     <ul class="mobile-nav-list">
       <li><a href="index.html" class="mobile-nav-link">Welcome</a></li>
       <li><a href="ministries.html" class="mobile-nav-link">Ministries</a></li>
@@ -953,9 +988,6 @@
       <li><a href="locations.html" class="mobile-nav-link">Locations</a></li>
       <li><a href="gallery.html" class="mobile-nav-link active" aria-current="page">Gallery</a></li>
     </ul>
-    <div style="margin-top: auto;">
-      <a href="locations.html" class="btn btn-teal-pill" style="width: 100%;">Plan Your Visit</a>
-    </div>
   </aside>
 
   <!-- Hero Section -->
@@ -1425,6 +1457,7 @@
 
       // 2. Mobile Menu Toggle & Drawer
       const mobileBtn = document.getElementById('mobile-menu-btn');
+      const drawerCloseBtn = document.getElementById('drawer-close-btn');
       const mobileDrawer = document.getElementById('mobile-drawer');
       const drawerBackdrop = document.getElementById('drawer-backdrop');
       const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -1433,18 +1466,18 @@
         const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
         mobileDrawer.classList.toggle('open', isOpen);
         drawerBackdrop.classList.toggle('open', isOpen);
-        mobileBtn.classList.toggle('open', isOpen);
-        mobileBtn.setAttribute('aria-expanded', isOpen);
+        if (mobileBtn) {
+          mobileBtn.classList.toggle('open', isOpen);
+          mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          mobileBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        }
         document.body.style.overflow = isOpen ? 'hidden' : '';
       }
 
-      if (mobileBtn) {
-        mobileBtn.addEventListener('click', () => toggleDrawer());
-        drawerBackdrop.addEventListener('click', () => toggleDrawer(false));
-        mobileNavLinks.forEach(link => {
-          link.addEventListener('click', () => toggleDrawer(false));
-        });
-      }
+      if (mobileBtn) mobileBtn.addEventListener('click', () => toggleDrawer());
+      if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', () => toggleDrawer(false));
+      if (drawerBackdrop) drawerBackdrop.addEventListener('click', () => toggleDrawer(false));
+      mobileNavLinks.forEach(link => link.addEventListener('click', () => toggleDrawer(false)));
 
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
